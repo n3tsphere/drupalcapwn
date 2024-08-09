@@ -14,7 +14,7 @@ Manual installation is as follows:
 
 ```
 sudo apt install python3 python3-pip
-git clone https://github.com/drupalcapwn/drupalcapwn.git
+git clone https://github.com/n3tsphere/drupalcapwn.git
 cd drupalcapwn
 python3 -m venv .
 source bin/activate
