@@ -1,10 +1,10 @@
 # drupalcapwn
 
 ## Description
-**drupalcapwn** is a Drupal Module Vulnerability Checker : It will check for a Drupal module (as found with any drupal scanner like [droopescan](https://github.com/SamJoan/droopescan)) related Drupal Security Advisories and can filter Advisories having available exploits : 
+**drupalcapwn** is a Drupal Module Vulnerability Checker : It will check Drupal Security Advisories for vulnerabilities in a Drupal Module (as found with any drupal scanner like [droopescan](https://github.com/SamJoan/droopescan)) and can filter advisories having available exploits. 
 * Uses Drupal API to build a local SQLite Database containing Drupal security advisories. 
 * Display security advisories for a Drupal Module
-* Display security advisories with known exploits only (or theoritical exploits).
+* Display security advisories with known exploits
 * Display recent security advisories (filter by year).
 * Output security advisories in plain text or JSON.
 
@@ -58,7 +58,7 @@ Examples:
   ./drupalcapwn.py -i input.txt -o output.txt -nu
 ```
 
-### Get security advisories for 'restws' module 
+### Example: Get security advisories for 'restws' module 
 ```
 $ ./drupalcapwn.py -m restws
 DrupAlCapwn v0.1 : Drupal Module Vulnerability Checker
@@ -78,7 +78,7 @@ DrupAlCapwn v0.1 : Drupal Module Vulnerability Checker
          CVE : N/A
          URL : https://www.drupal.org/sa-contrib-2024-019
 ```
-### Get security advisories for Drupal core since year 2024
+### Example: Get security advisories for Drupal core since year 2024
 ```
 $ ./drupalcapwn.py -m drupal -y 2024
 DrupAlCapwn v0.1 : Drupal Module Vulnerability Checker
@@ -93,7 +93,7 @@ DrupAlCapwn v0.1 : Drupal Module Vulnerability Checker
          CVE : N/A
          URL : https://www.drupal.org/sa-core-2024-001
 ```
-### Get security advisories with available exploits for 'restws' and 'webform' modules
+### Example: Get security advisories with available exploits for 'restws' and 'webform' modules
 ```
 $ ./drupalcapwn.py -m restws,webform -e
 DrupAlCapwn v0.1 : Drupal Module Vulnerability Checker
@@ -114,7 +114,7 @@ DrupAlCapwn v0.1 : Drupal Module Vulnerability Checker
          CVE : N/A
          URL : https://www.drupal.org/sa-contrib-2021-004
 ```
-### Get security advisories for input file module list and output results in json to file
+### Example: Get security advisories for input file module list and output results in json to file
 
 ```
 $ ./drupalcapwn.py -i input.txt -o output.json -j
