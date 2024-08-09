@@ -19,7 +19,7 @@ cd drupalcapwn
 python3 -m venv .
 source bin/activate
 pip install -r requirements.txt
-./drupalcapwn.py --help
+python3 ./drupalcapwn.py --help
 ```
 
 **IMPORTANT**: At first start-up *if no database file exists* : a **full database update** is launched and fetches every Drupal Advisories locally with Drupal API.
@@ -57,55 +57,6 @@ Examples:
   ./drupalcapwn.py -m drupal -e -j
   ./drupalcapwn.py -i input.txt -o output.txt -nu
 ```
-
-### Update Database
-
-A local SQLite Database is build with advisories requested from Drupal API. 
-* At first start-up if no database file exists : a **full database update** is launched and fetches every Drupal Advisories locally with Drupal API. 
-* Each next run: update are checked and if needed an **incremental database update** is launched.
-
-**IMPORTANT**: If database update is cancelled or interrupted, database will have an incomplete advisory list.
-A full update must be run with option `-fu` or `--full-update`. See chapter **`Database update interruption`**
-
-#### Disable automatic update check
-If database is up to date, automatic update check can be disabled with `-nu` option (Quick startup)
-```
-$ ./drupalcapwn.py -nu
-DrupAlCapwn v0.1 : Drupal Module Vulnerability Checker
-
-[+] Skipping update check
-
-No Drupal module provided : Use '-m' with module name or '-i' with input file. Use '-h' or '--help' for Help
-```
-
-#### Force full update
-**IMPORTANT**: If database update is cancelled or interrupted, database will have an incomplete advisory list. See chapter `Database update interruption`
-
-```
-$ ./drupalcapwn.py -fu
-DrupAlCapwn v0.1 : Drupal Module Vulnerability Checker
-
-[+] Performing full database update
-[>] Updating Drupal Security Advisories Database (full update)
-
-    !!! DO NOT PRESS [CTRL+C] OR INTERRUPT PROCESS !!!
-
-    (F) Parsing Drupal Security Advisories : Page 1/11
-    + 43318 (2006-01-04): securitydrupalorg - 'False Drupal XSS alarm on BugTraq - PSA-2006-001'
-    + 184313 (2007-10-17): securitydrupalorg - 'PHP exploit using Drupal circulating - PSA-2007-001'
-    + 372836 (2009-02-11): securitydrupalorg - 'Drupal core - Administer content types permission - PSA-2009-001'
-    
-    [...]
-
-[>] Full update finished
-```
-#### Database update interruption 
-**IMPORTANT**: If `[Ctrl+C]` is pressed while update process is running or if update process is interrupted, the following message will be displayed : 
-```
-[!] Update aborted : DATABASE IS IN INCORRECT STATE, FULL UPDATE REQUIRED
-[>] Next time perform full update with option '-fu' or '--full-update'
-```
-Database will have an incomplete advisory list, a full update must be run next time with option `-fu` or `--full-update` to get a complete list of all advisories.
 
 ### Get security advisories for 'restws' module 
 ```
@@ -174,3 +125,53 @@ DrupAlCapwn v0.1 : Drupal Module Vulnerability Checker
 
 Output written to file 'output.json'
 ```
+
+
+## Update Advisory Database
+
+A local SQLite Database is build with advisories requested from Drupal API. 
+* At first start-up if no database file exists : a **full database update** is launched and fetches every Drupal Advisories locally with Drupal API. 
+* Each next run: update are checked and if needed an **incremental database update** is launched.
+
+**IMPORTANT**: If database update is cancelled or interrupted, database will have an incomplete advisory list.
+A full update must be run with option `-fu` or `--full-update`. See chapter **`Database update interruption`**
+
+### Disable automatic update check
+If database is up to date, automatic update check can be disabled with `-nu` option (Quick startup)
+```
+$ ./drupalcapwn.py -nu
+DrupAlCapwn v0.1 : Drupal Module Vulnerability Checker
+
+[+] Skipping update check
+
+No Drupal module provided : Use '-m' with module name or '-i' with input file. Use '-h' or '--help' for Help
+```
+
+### Force full update
+**IMPORTANT**: If database update is cancelled or interrupted, database will have an incomplete advisory list. See chapter `Database update interruption`
+
+```
+$ ./drupalcapwn.py -fu
+DrupAlCapwn v0.1 : Drupal Module Vulnerability Checker
+
+[+] Performing full database update
+[>] Updating Drupal Security Advisories Database (full update)
+
+    !!! DO NOT PRESS [CTRL+C] OR INTERRUPT PROCESS !!!
+
+    (F) Parsing Drupal Security Advisories : Page 1/11
+    + 43318 (2006-01-04): securitydrupalorg - 'False Drupal XSS alarm on BugTraq - PSA-2006-001'
+    + 184313 (2007-10-17): securitydrupalorg - 'PHP exploit using Drupal circulating - PSA-2007-001'
+    + 372836 (2009-02-11): securitydrupalorg - 'Drupal core - Administer content types permission - PSA-2009-001'
+    
+    [...]
+
+[>] Full update finished
+```
+### Database update interruption 
+**IMPORTANT**: If `[Ctrl+C]` is pressed while update process is running or if update process is interrupted, the following message will be displayed : 
+```
+[!] Update aborted : DATABASE IS IN INCORRECT STATE, FULL UPDATE REQUIRED
+[>] Next time perform full update with option '-fu' or '--full-update'
+```
+Database will have an incomplete advisory list, a full update must be run next time with option `-fu` or `--full-update` to get a complete list of all advisories.
