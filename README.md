@@ -1,7 +1,7 @@
-# DrupAlCapwn
+# drupalcapwn
 
 ## Description
-DrupAlCapwn is a Drupal Module Vulnerability Checker : It will check for a Drupal module (as found with any drupal scanner like [droopescan](https://github.com/SamJoan/droopescan)) related Drupal Security Advisories and can filter Advisories having available exploits : 
+**drupalcapwn** is a Drupal Module Vulnerability Checker : It will check for a Drupal module (as found with any drupal scanner like [droopescan](https://github.com/SamJoan/droopescan)) related Drupal Security Advisories and can filter Advisories having available exploits : 
 * Uses Drupal API to build a local SQLite Database containing Drupal security advisories. 
 * Display security advisories for a Drupal Module
 * Display security advisories with known exploits only (or theoritical exploits).
@@ -14,7 +14,7 @@ Manual installation is as follows:
 
 ```
 sudo apt install python3 python3-pip
-git clone https://github.com/TODO/drupalcapwn.git
+git clone https://github.com/drupalcapwn/drupalcapwn.git
 cd drupalcapwn
 python3 -m venv .
 source bin/activate
