@@ -652,11 +652,11 @@ def print_banner():
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(
         prog='drupalcapwn.py',
-        description='drupalcapwn : Drupal Module Vulnerability Checker',
+        description=f"drupalcapwn v{__VERSION__} : Drupal Module Vulnerability Checker",
         epilog='''
 Examples:
-    ./%(prog)s -m drupal -e -j
-    ./%(prog)s -i input.txt -o output.txt -nu
+    python3 ./%(prog)s -m drupal -e -j
+    python3 ./%(prog)s -i input.txt -o output.txt -nu
     ''',
         formatter_class= OptionFormatter)
     
