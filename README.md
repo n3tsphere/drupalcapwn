@@ -1,7 +1,7 @@
 # drupalcapwn
 
 ## Description
-**drupalcapwn** is a Drupal Module Vulnerability Checker : It will check Drupal Security Advisories for vulnerabilities in a Drupal Module (as found with any drupal scanner like [droopescan](https://github.com/SamJoan/droopescan)) and can filter advisories having available exploits. 
+**drupalcapwn** is a - work in progress - Drupal Module Vulnerability Checker : It will check Drupal Security Advisories for vulnerabilities in a Drupal Module (as found with any drupal scanner like [droopescan](https://github.com/SamJoan/droopescan)) and can filter advisories having available exploits. 
 * Uses Drupal API to build a local SQLite Database containing Drupal security advisories. 
 * Display security advisories for a Drupal Module
 * Display security advisories with known exploits
