@@ -31,7 +31,7 @@ A full update must be run next time with option `-fu` or `--full-update`. See ch
 
 ```
 $ python3 ./drupalcapwn.py -h
-usage: drupalcapwn.py [-h] [-m MODULE] [-i INPUT_FILE] [-e] [-y YEAR] [-j] [-o OUTPUT_FILE] [-nu] [-fu] [-db DATABASE] [-d] [-v]
+usage: python3 ./drupalcapwn.py [-h] [-m MODULE] [-i INPUT_FILE] [-e] [-y YEAR] [-j] [-o OUTPUT_FILE] [-nu] [-fu] [-db DATABASE] [-d] [-v]
 
 drupalcapwn v0.1 : Drupal Module Vulnerability Checker
 
@@ -54,8 +54,8 @@ optional arguments:
   -v, --verbose         Verbose mode (default: False)
 
 Examples:
-  ./drupalcapwn.py -m drupal -e -j
-  ./drupalcapwn.py -i input.txt -o output.txt -nu
+  python3 ./drupalcapwn.py -m drupal -e -j
+  python3 ./drupalcapwn.py -i input.txt -o output.txt -nu
 ```
 
 ### Example: Get security advisories for 'restws' module 
